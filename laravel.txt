@@ -1,0 +1,99 @@
+Seeder
+Response
+Foreighn keys
+scope
+deatached
+$mahmud->
+polymorphic relationships
+
+Facebook:
+1. https://developers.facebook.com - for facebook authentication
+2. https://laravel.com/docs/5.6/socialite (composer require laravel/socialite)
+3. cinfig folderyje services.php
+
+Key fingerprint: 2048 f2:a8:e0:6d:09:23:40:62:43:1f:c5:f7:24:bc:6c:9b
+Key comment: rsa-key-20180302
+
+1. sudo apt update
+2. sudo apt upgrade (atnaujinti antra karta reikia labai atsargiai, nes gali nebesutapti versijos)
+3. sudo apt install zip unzip git curl wget mcrypt (instaliuoja packagus)
+4. sudo apt install mysql-server
+5. (optional) mysql_secure_instalation 
+6. mysql -u root -pPASSWORD
+7. 
+
+1. Atnaujinti sistema
+sudo apt update
+sudo apt upgrade
+
+2. Suinstaliuojam reikalingus paketus darbui
+sudo apt install zip unzip git curl wget mcrypt
+
+3. Suinstaliuojam MySQL
+sudo apt install mysql-server
+mysql_secure_installation
+
+patikrinimas: mysql -u root -p{root slaptažodis}
+
+4. Suinstaliuojam PHP
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt update
+sudo apt iapt innstall php7.1 php7.1-fpm php7.1-cli php7.1-curl php7.1-mysql php7.1-gd php7.1-xml php7.1-mcrypt php7.1-mbstring php7.1-iconv
+
+patikrinimas ar veikia: php -v
+
+5. Instaliuojam nginx
+sudo apt install nginx
+
+patikrinimas: užeiti i ip
+
+6. Sukonfiguruojam nginx ir php-fpm
+pakeiciam /etc/nginx/sites-enabled/default turini i duota https://laravel.com/docs/5.6/deployment pakeitus
+fastcgi_params i fastcgi.conf ir root direktorija i /var/www/html/public
+sudo systemctl restart nginx
+(issaugoti ir iseiti ESC:wq)
+(patikrinimui:
+cd /var/www/html
+mkdir public
+cd public
+cim index.php ->editinimui
+)
+
+7. suinstaliuojam composer
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+sudo chown -R $USER $HOME/.composer
+(composerio paleidimas - "composer")
+
+8. Suinstaliuojam projekta
+cd /var/www/html
+rm -rf public
+rm index.n
+git clone https://github.com/cerkauskas/dbzdb.git .
+composer install --optimize-autoloader
+sudo chmod 777 storage -R
+cp .env.example .env
+php artisan key:generate
+(sukuri duombaze mysql)
+Pakeiciam .env turini su musu credentialais
+php artisan migrate
+(optional) php artisan db:seed
+php artisan storage:link
+php artisan config:cache
+php artisan route:cache
+
+9. Pakeitimu atnaujinimas
+php artisan down
+php artisan route:clear
+php artisan config:clear
+php artisan cache:clear
+git pull origin master
+composer install --optimize-autoloader
+php artisan migrate
+php artisan config:cache
+php artisan route:cache
+php artisan up
+
+rm -rf.git
+Putty root@TavoIP
+iseiti is vim : ESC:wq
+
