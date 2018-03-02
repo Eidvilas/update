@@ -1,0 +1,21 @@
+#rating-div {
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+#rating-image {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: 0;
+    top: 0;
+}
+#rating {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    left: 30px;
+    top:240px;
+}
