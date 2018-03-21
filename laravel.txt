@@ -33,7 +33,7 @@ sudo apt install zip unzip git curl wget mcrypt
 sudo apt install mysql-server
 mysql_secure_installation
 
-patikrinimas: mysql -u root -p{root slaptaûodis}
+patikrinimas: mysql -u root -p{root slapta≈æodis}
 
 4. Suinstaliuojam PHP
 sudo add-apt-repository -y ppa:ondrej/php
@@ -45,7 +45,7 @@ patikrinimas ar veikia: php -v
 5. Instaliuojam nginx
 sudo apt install nginx
 
-patikrinimas: uûeiti i ip
+patikrinimas: u≈æeiti i ip
 
 6. Sukonfiguruojam nginx ir php-fpm
 pakeiciam /etc/nginx/sites-enabled/default turini i duota https://laravel.com/docs/5.6/deployment pakeitus
@@ -97,3 +97,4 @@ rm -rf.git
 Putty root@TavoIP
 iseiti is vim : ESC:wq
 
+$2y$10$zUaJQga8zU32714jmFsNp.6ryoYWd9IaU5p/XKdIfZNIPQ41OLfpS
